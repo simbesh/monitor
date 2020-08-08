@@ -54,7 +54,7 @@ services:
     image: prom/blackbox-exporter
     ports:
       - 9115:9115
-    dns: 8.8.8.8
+    dns: 1.1.1.1
     restart: always
     volumes:
       - "./blackbox:/blackbox"
