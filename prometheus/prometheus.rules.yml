@@ -96,7 +96,7 @@ groups:
       summary: "Container killed (instance {{ $labels.instance }})"
       description: "A container has disappeared\n  VALUE = {{ $value }}\n  LABELS: {{ $labels }}"
   - alert: ContainerCpuUsage
-    expr: (sum(rate(container_cpu_usage_seconds_total[3m])) BY (instance, name) * 100) > 80
+    expr: (sum (rate(container_cpu_usage_seconds_total{name!=""}[3m])) * 100)  > 80
     for: 5m
     labels:
       severity: warning
