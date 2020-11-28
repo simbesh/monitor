@@ -48,8 +48,8 @@ services:
     - --bolt.path=/data/bot.db
     environment:
       ALERTMANAGER_URL: http://alertmanager:9093
-      TELEGRAM_ADMIN: ''
-      TELEGRAM_TOKEN: ''
+      TELEGRAM_ADMIN: '${TELEGRAM_CHAT_ID}'
+      TELEGRAM_TOKEN: '${TELEGRAM_BOT_TOKEN}'
     depends_on:
       - alertmanager
     volumes:
